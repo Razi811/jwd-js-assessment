@@ -7,46 +7,64 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <!-- Bootstrap CSS -->
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    
+
     <title>Quiz</title>
   </head>
-  <body>
-    <div class="container m-5" id="start">
-      <div class="card" style="width: 18rem">
+  <body class="bg-image" style="
+    background-image: url('./Image/Background.jpg');
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    ">
+    
+    <div class="container" id="start" style="margin-top: 15rem;">
+      <div class="card" style="text-align: center">
         <div class="card-body">
-          <h5 class="card-title">Test your knowledge</h5>
-          <p class="card-text">Some quick description about the quiz .</p>
-          <a class="btn btn-primary">Start</a>
+          <h1 class="card-title">Test Your Knowledge</h1>
+          <p class="card-text">Exercise your brain muscles by taking our general knowledge quiz!</p>
+          <button class="btn btn-lg btn-block" style="background-color: #eea4a4; color: white;">Start</button>
         </div>
       </div>
     </div>
 
     <!-- (B) QUIZ CONTAINER -->
     <div class="container" id="quizBlock" style="display: none">
-      <div class="mb-5">
-        <h2>Test your knowledge</h2>
-         Time remaining <span id="countdown"></span>
+      <div class="mb-5" style="text-align: center">
+        <h1>Test Your Knowledge</h1>
+        
+        <h2 id="time" style="
+          border-radius: 25px;
+          background: #538ca7;
+          height: 60px;
+          width: 50%;
+          margin: auto;
+          padding: 10px 10px 10px 10px;
+          color: white;
+        " >Your time starts now!</h2>
+        <br>
+        <h3 id="calculatedScore" style="color: #73AD21;"></h3>
       </div>
+      
       <div id="quizWrap"></div>
 
-      <div>
-        <button type="button" class="btn btn-submit" id="submit">
+      <div class="buttons">
+        <button type="button" class="btn btn-primary" id="btnSubmit">
           Submit Quiz
         </button>
-        <button type="button" class="btn btn-restart" id="restart" onclick="myButton()">
+        <button onClick="window.location.reload();" type="button" class="btn btn-secondary" id="btnReset">
           Reset Quiz
         </button>
         <span id="score"></span>
       </div>
-      
     </div>
-  
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
